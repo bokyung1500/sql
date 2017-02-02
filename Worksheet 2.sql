@@ -6,8 +6,8 @@ select first_name || ' ' || last_name as "이름", email as "이메일",
 phone_number as "전화번호" from employees order by hire_date asc;
 
 --2
-select job_id as "업무 이름", max(salary) as "최고임금" 
-from employees group by job_id;
+select j.job_title as "업무 이름", max(e.salary) as "최고임금" 
+from employees e, jobs j where e.job_id = j.job_id group by job_title order by 최고임금 desc;
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 --3
 select count(*) from employees where manager_id is null;
